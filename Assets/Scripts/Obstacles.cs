@@ -20,7 +20,10 @@ public class Obstacles : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             other.GetComponent<Character>().health -= damage;
-            Debug.Log("Player Dies");
+            if (other.GetComponent<Character>().health <= 0)
+            {
+                Debug.Log("Player Dies");
+            }
         }
     }
 }

@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Gigantify
   m_EditorClassIdentifier: 
   amount: 1.5
+  speed: 6

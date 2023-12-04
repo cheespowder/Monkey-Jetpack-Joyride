@@ -6,6 +6,12 @@ public class Powerup : MonoBehaviour
 {
     public PowerupEffect powerupEffect;
     public float duration = 5f;
+    public float speed;
+
+    private void Update()
+    {
+        transform.Translate(Vector2.left * speed * Time.deltaTime);
+    }
 
     IEnumerator OnTriggerEnter2D(Collider2D collision)
     {

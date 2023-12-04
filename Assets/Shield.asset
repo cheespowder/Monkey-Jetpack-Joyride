@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   amount: 100
+  speed: 6
+  collsion: {fileID: 0}

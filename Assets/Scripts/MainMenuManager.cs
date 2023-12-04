@@ -18,4 +18,10 @@ public class MainMenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void GOQuitButton()
+    {
+        Debug.Log("pressed");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+
 }

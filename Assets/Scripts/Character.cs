@@ -9,6 +9,11 @@ public class Character : MonoBehaviour
     public float upSpeed;
     public ParticleSystem ps;
 
+    public Behaviour background;
+    public Behaviour spawners;
+    public Behaviour goScreen;
+    public Behaviour score;
+
     private ParticleSystem.EmissionModule em;
 
     public int health = 1;
@@ -17,6 +22,7 @@ public class Character : MonoBehaviour
     void Start()
     {
         em = ps.emission;
+        goScreen.enabled = false;
     }
 
     // Update is called once per frame
@@ -31,6 +37,17 @@ public class Character : MonoBehaviour
         else
         {
             em.enabled = false;
+        }
+
+        if (health <= 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+            upSpeed = 0;
+            score.enabled = false;
+            ps.enableEmission = false;
+            background.enabled = false;
+            spawners.enabled = false;
+            goScreen.enabled = true;
         }
     }
 }
